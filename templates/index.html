@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>MQG Web App</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            background: #f8fafc;
+            margin: 0;
+            padding: 40px;
+            color: #1e293b;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 2.2em;
+            margin-bottom: 30px;
+        }
+
+        form {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
+            margin: 0 auto 40px;
+        }
+
+        label {
+            font-weight: 600;
+            display: block;
+            margin-bottom: 10px;
+            font-size: 1em;
+        }
+
+        textarea {
+            width: 100%;
+            height: 180px;
+            padding: 14px;
+            border-radius: 8px;
+            border: 1px solid #cbd5e1;
+            font-size: 1em;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #3b82f6;
+            color: white;
+            padding: 12px 24px;
+            font-size: 1em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+        }
+
+        .output {
+            background: white;
+            padding: 15px 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            max-width: 900px;
+            margin: auto;
+        }
+
+        .output h3 {
+            font-size: 1.4em;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 10px;
+        }
+
+        .qa {
+            background: #f9fafb;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            padding: 18px 20px;
+            margin-bottom: 20px;
+        }
+
+        .question {
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        .answer {
+            display: none;
+            margin-top: 12px;
+            color: #334155;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .toggle-btn {
+            background-color: #e0f2fe;
+            color: #0369a1;
+            border: 1px solid #bae6fd;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95em;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+
+        .toggle-btn:hover {
+            background-color: #bae6fd;
+        }
+
+        .watermark {
+            text-align: center;
+            font-size: 0.9em;
+            color: #64748b;
+            padding-top: 30px;
+            border-top: 1px solid #e2e8f0;
+            margin-top: 60px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }        
+        
+        .watermark .names {
+            display: inline-block;
+            margin-top: 6px;
+            font-weight: 500;
+        }
+        
+    </style>
+</head>
+<body>
+    <h1>📘 Multiple Question Generation</h1>
+
+    <form method="post">
+        <label>Masukkan Paragraf IPA Dalam Bahasa Inggris:</label>
+        <textarea name="paragraph" required placeholder="Masukkan teks paragraf IPA di sini..."></textarea>
+        <button type="submit">🚀 Generate</button>
+    </form>
+
+    {% if result %}
+    <div class="output">
+        <h3>Hasil Pertanyaan</h3>
+        {% for item in result %}
+        <div class="qa">
+            <div class="question">Q: {{ item.Q }}</div>
+            <button class="toggle-btn" onclick="toggleAnswer(this)">Tampilkan Jawaban</button>
+            <div class="answer">A: {{ item.A }}</div>
+        </div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <footer class="watermark">
+        <div>
+            <strong>© Universitas Tarumanagara, Fakultas Teknologi Informasi</strong>
+            <br><br>
+            <span class="names">
+                535230002 – Samuel Supardjo<br>
+                535230136 – Louis Febriano<br>
+                535230168 – Hengky Laurencio
+            </span><br><br>
+            Dosen Pendamping: Viny Christanti Mawardi, S.Kom., M.Kom.
+        </div>
+    </footer>
+
+    <script>
+        function toggleAnswer(btn) {
+            const answer = btn.nextElementSibling;
+            const isHidden = answer.style.display === "none" || answer.style.display === "";
+            answer.style.display = isHidden ? "block" : "none";
+            btn.textContent = isHidden ? "Sembunyikan Jawaban" : "Tampilkan Jawaban";
+        }
+    </script>
+</body>
+</html>
