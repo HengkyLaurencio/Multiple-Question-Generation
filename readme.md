@@ -17,7 +17,7 @@ pip install Flask transformers protobuf
 ```
 ### 3. Unduh dan Ekstrak Model
 1. **Unduh model zip** dari link berikut:  
-   [Download t5-mqg-base-model.zip](https://drive.google.com/file/d/1mTUH2Z1pwvWdk-7hI4fw7qO2IZzx_fas/view?usp=sharing)
+   [Download t5-mqg-base-model.zip](https://drive.google.com/file/d/19YpxcTiYDVSsYfh1r-tt5DHzG7JcVtLh/view?usp=sharing)
    
 2. **Ekstrak file zip** ke dalam folder `model/`. Folder `model/` harus berada pada direktori utama aplikasi Anda. Struktur folder Anda seharusnya terlihat seperti ini:
 ```
