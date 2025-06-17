@@ -11,9 +11,9 @@ git clone <URL_REPOSITORY>
 cd <NAMA_FOLDER_REPOSITORY>
 ```
 ### 2. Instalasi Dependensi
-Buat environment virtual dan instal dependensi yang diperlukan dengan perintah berikut:
+Buat instal dependensi yang diperlukan dengan perintah berikut:
 ```bash
-pip install Flask transformers protobuf
+pip install -r requirements.txt
 ```
 ### 3. Unduh dan Ekstrak Model
 1. **Unduh model zip** dari link berikut:  
