@@ -2,6 +2,12 @@
 
 Aplikasi ini dibangun dengan menggunakan Flask untuk web framework, serta transformers dan protobuf untuk model pemrosesan teks. Berikut adalah langkah-langkah untuk menjalankan aplikasi.
 
+## Prasyarat
+
+- Python versi **3.10** (versi lain mungkin tidak kompatibel dengan beberapa dependensi, terutama Transformers dan Torch).
+- `pip` telah terinstal.
+- Koneksi internet untuk unduh model (opsional jika sudah tersedia offline).
+
 ## Langkah-langkah Instalasi
 
 ### 1. Clone Repository
